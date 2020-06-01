@@ -18,3 +18,4 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
 <script src="js/index.js"></script>
 <script src="js/modalLoginRegister.js"></script>
+<script src='js/tinymce/tinymce.min.js'></script>

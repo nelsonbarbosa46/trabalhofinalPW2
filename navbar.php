@@ -95,16 +95,11 @@
               echo '
               <li class="nav-item dropdown">
                 <a class="btn btn-login dropdown-toggle" id="navbarDropdownUser" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">'.$_SESSION['nomeuser'].'</a>
+                  aria-haspopup="true" aria-expanded="false">'.$_SESSION['nomeuser'].' ID: '.$_SESSION['iduser'].'</a>
                 <div class="dropdown-menu" style="width: 50px" aria-labelledby="navbarDropdownUser">
                   <form method="post" action="inc/logout.inc.php">
-<<<<<<< Updated upstream
                  <button class="btn btn-link dropdown-item" type="submit">Sair</button>
                 </form>
-=======
-                    <button class="btn btn-link dropdown-item" type="submit">Sair</button>
-                  </form>
->>>>>>> Stashed changes
                 </div>
               </li>
               ';
