@@ -60,7 +60,7 @@
 </div>
 
 <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" href="#">TIDDER</a>
+  <a class="navbar-brand" href="#"> <img src="img/Logo-e-nome-B.png" width="85px"> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -95,7 +95,7 @@
               echo '
               <li class="nav-item dropdown">
                 <a class="btn btn-login dropdown-toggle" id="navbarDropdownUser" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">'.$_SESSION['nomeuser'].'</a>
+                  aria-haspopup="true" aria-expanded="false">'.$_SESSION['nomeuser'].' ID: '.$_SESSION['iduser'].'</a>
                 <div class="dropdown-menu" style="width: 50px" aria-labelledby="navbarDropdownUser">
                   <form method="post" action="inc/logout.inc.php">
                  <button class="btn btn-link dropdown-item" type="submit">Sair</button>
@@ -125,12 +125,7 @@
                 </button>
               </li>';
             }
-            
             ?>
-            
-
-            
-        
     </ul>
   </div>
 </nav>
