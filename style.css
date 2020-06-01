@@ -1,0 +1,52 @@
+.up, .down {
+    font-size: 20px;
+}
+
+.up:hover, .down:hover {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.clicked {
+    color: #E63946 !important;
+}
+
+.text-showinfo {
+    font-size: 14px;
+}
+
+nav {
+    background-color: #1D3557 !important;
+}
+
+nav a {
+    color: white;
+}
+
+.navbar-nav .menuUser {
+    color: white !important;
+}
+
+.btn-login {
+    background-color: #E63946 !important;
+    color: white !important;
+}
+
+.modal-header {
+    border-bottom: 0px !important;
+}
+
+.criaruser {
+    color: dodgerblue;
+}
+
+
+
+/*
+ Dark mode 
+@media (prefers-color-scheme: dark) {
+    body, nav {
+        background-color: black !important;
+        color: white;
+    }
+}*/
