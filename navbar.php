@@ -98,7 +98,7 @@
                   aria-haspopup="true" aria-expanded="false">'.$_SESSION['nomeuser'].'</a>
                 <div class="dropdown-menu" style="width: 50px" aria-labelledby="navbarDropdownUser">
                   <form method="post" action="inc/logout.inc.php">
-                  <a class="dropdown-item" type="submit" class="btn btn-login">Sair</a>
+                 <button class="btn btn-link dropdown-item" type="submit">Sair</button>
                 </form>
                 </div>
               </li>

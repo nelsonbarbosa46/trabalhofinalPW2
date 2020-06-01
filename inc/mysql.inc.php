@@ -147,7 +147,7 @@ function createUser($username, $email, $password) {
                 $stmt->bind_param("sss", $username, $email, $hashedpwd);
                 $stmt->execute();
                 $stmt->store_result();
-                $erro = 0;
+                $erro = loginUser($email,$password);
             }
         }
     }

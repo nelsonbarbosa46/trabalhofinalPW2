@@ -34,6 +34,7 @@ if (isset($_POST['criarUser'])) {
     }
     switch ($erro) {
         case 0:
+
             header("Location: ../index.php?criadocomsucesso");
             break;
         case 1:
