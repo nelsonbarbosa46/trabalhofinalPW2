@@ -60,7 +60,7 @@
 </div>
 
 <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" href="#">TIDDER</a>
+  <a class="navbar-brand" href="#"> <img src="img/Logo-e-nome-B.png" width="85px"> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -98,8 +98,13 @@
                   aria-haspopup="true" aria-expanded="false">'.$_SESSION['nomeuser'].'</a>
                 <div class="dropdown-menu" style="width: 50px" aria-labelledby="navbarDropdownUser">
                   <form method="post" action="inc/logout.inc.php">
+<<<<<<< Updated upstream
                  <button class="btn btn-link dropdown-item" type="submit">Sair</button>
                 </form>
+=======
+                    <button class="btn btn-link dropdown-item" type="submit">Sair</button>
+                  </form>
+>>>>>>> Stashed changes
                 </div>
               </li>
               ';
@@ -111,12 +116,7 @@
                 </button>
               </li>';
             }
-            
             ?>
-            
-
-            
-        
     </ul>
   </div>
 </nav>
