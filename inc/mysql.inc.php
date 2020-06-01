@@ -124,7 +124,7 @@ function upDownPost($idpost, $iduser)
     return $varReturn;
 }
 
-function createUser($username, $email, $password) {
+function createUser($username, $email, $password,$loginsave) {
     global $conex;
     /*
     0: não deu erro
@@ -147,7 +147,8 @@ function createUser($username, $email, $password) {
                 $stmt->bind_param("sss", $username, $email, $hashedpwd);
                 $stmt->execute();
                 $stmt->store_result();
-                $erro = 0;
+                
+                $erro = loginUser($email,$password,$loginsave);
             }
         }
     }
@@ -156,7 +157,7 @@ function createUser($username, $email, $password) {
     return $erro;
 }
 
-function loginUser($email, $password) {
+function loginUser($email, $password, $loginsave) {
 
     global $conex;
 
@@ -177,8 +178,21 @@ function loginUser($email, $password) {
         if ($row = $result->fetch_assoc()) {
             $passwordCheck= password_verify($password, $row['pass']);
             if ($passwordCheck === true) {
-                $_SESSION['nomeuser'] = $row['username'];
-                $_SESSION['iduser'] = $row['iduser'];
+                if ($loginsave=="sim"){
+                
+                   $cookie_name = "nomeuser";
+                   $cookie_value = $row['username'];
+                   $cookie_name1 = "iduser";
+                   $cookie_value1 =  $row['id'];
+                   var_dump($cookie_value1);
+                   setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+                   setcookie($cookie_name1, $cookie_value1, time() + (86400 * 30), "/"); // 86400 = 1 day
+
+                }
+                else{
+                    $_SESSION['nomeuser'] = $row['username'];
+                    $_SESSION['iduser'] = $row['id'];
+                }
                 $erro = 0;
             } else {
                 $erro = 2;

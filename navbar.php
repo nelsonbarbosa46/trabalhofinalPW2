@@ -19,7 +19,7 @@
               <label for="loginpass">Palavra-passe</label>
             </div>
             <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="lembrar">
+              <input type="checkbox" class="custom-control-input" id="lembrar" name="lembrar">
               <label class="custom-control-label" for="lembrar">Lembrar</label>
             </div>
             <div class="text-center pt-3">
@@ -46,7 +46,7 @@
                 <label for="registerpass2">Repetir Palavra-passe</label>
             </div>
             <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="lembrarLogin">
+                <input type="checkbox" class="custom-control-input" id="lembrarLogin" name="lembrar1">
                 <label class="custom-control-label" for="lembrarLogin">Lembrar</label>
             </div>
             <div class="text-center pt-3">
@@ -98,12 +98,26 @@
                   aria-haspopup="true" aria-expanded="false">'.$_SESSION['nomeuser'].'</a>
                 <div class="dropdown-menu" style="width: 50px" aria-labelledby="navbarDropdownUser">
                   <form method="post" action="inc/logout.inc.php">
-                  <a class="dropdown-item" type="submit" class="btn btn-login">Sair</a>
+                 <button class="btn btn-link dropdown-item" type="submit">Sair</button>
                 </form>
                 </div>
               </li>
               ';
-            } else {
+            } else if (!empty($_COOKIE['nomeuser'])) {
+               echo '
+              <li class="nav-item dropdown">
+                <a class="btn btn-login dropdown-toggle" id="navbarDropdownUser" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">'.$_COOKIE['nomeuser'].'</a>
+                <div class="dropdown-menu" style="width: 50px" aria-labelledby="navbarDropdownUser">
+                  <form method="post" action="inc/logout.inc.php">
+                 <button class="btn btn-link dropdown-item" type="submit">Sair</button>
+                </form>
+                </div>
+              </li>
+              ';
+
+            }
+            else{
               echo '
               <li class="nav-item">
                 <button type="button" class="btn btn-login" id="btnmodal" data-toggle="modal" data-target="#modalLogin">

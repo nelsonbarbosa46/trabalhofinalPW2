@@ -8,6 +8,13 @@ if (isset($_POST['criarUser'])) {
 	$email=$_POST['registeremail'];
 	$password=$_POST['registerpass'];
     $password2=$_POST['registerpass2'];
+    if (isset($_POST['lembrar1'])) {
+     $loginsave="sim";
+    } 
+    else {
+        $loginsave="nao";
+    }
+
     /*
     0: nao deu erro
     1: deu erro (vem da funcao createrUser())
@@ -27,13 +34,15 @@ if (isset($_POST['criarUser'])) {
         $erro = 5;
     } else {
         if ($password2 === $password) {
-            $erro = createUser($username, $email, $password);
+
+            $erro = createUser($username, $email, $password,$loginsave);
         } else {
             $erro = 6;
         }
     }
     switch ($erro) {
         case 0:
+
             header("Location: ../index.php?criadocomsucesso");
             break;
         case 1:
@@ -65,6 +74,13 @@ if (isset($_POST['loginUser'])) {
     $email = $_POST['loginemail'];
     $password = $_POST['loginpass'];
 
+    if (isset($_POST['lembrar'])) {
+     $loginsave="sim";
+    } 
+    else {
+        $loginsave="nao";
+    }
+
     /*
     0: nao deu erro
     1: deu erro (vem da funcao createrUser())
@@ -77,11 +93,13 @@ if (isset($_POST['loginUser'])) {
     if (empty($email) || empty($password)) {
         $erro = 4;
     } else {
-        $erro = loginUser($email, $password);
+        $erro = loginUser($email, $password,$loginsave);
     }
 
     switch ($erro) {
         case 0:
+           
+
             header("Location: ../index.php?loginefetuadocomsucesso");
             break;
         case 1:
